@@ -50,7 +50,7 @@ export default function Into() {
 
                 <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-slate-900/70 backdrop-blur-xl shadow-2xl">
                   <img
-                    src="public\cyberpunk-justice-scales.jpg"
+                    src="/cyberpunk-justice-scales.jpg"
                     alt="Image"
                     className="h-[260px] sm:h-[360px] lg:h-[500px] w-full object-cover"
                   />
