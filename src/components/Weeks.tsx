@@ -7,6 +7,7 @@ type WeekItem = {
   title: string;
   description: string;
   originalPost: string;
+  image: string;
 };
 
 const weeksData: WeekItem[] = [
@@ -22,6 +23,7 @@ I believe this is important, as so many people around the world already use this
 2) My introduction 
 Hi everyone, my name is Alexander and I'm from Kazakhstan. I'm studying information technology, and my major is Management Information Systems.
 My main possession is walking. I really love walking, especially in unfamiliar places, and I often travel between cities for this purpose. I can easily walk all day and get nothing but pleasure from it. This is really important for me because it helps me take a break from sedentary work and routine life.`,
+    image: "/week1.jpg",
   },
   {
     id: "week2",
@@ -39,6 +41,7 @@ I believe this life cycle accurately describes all the steps and doesn't miss an
 6) I usually use this website for my data analysis projects: https://www.kaggle.com/
 7) How significant is the role of error in data analysis? Especially when working with Big Data, due to the enormous volumes of data, calculations can often be inaccurate, and this prediction method cannot be considered accurate. Will it be possible to minimize this error in the future?
 `,
+    image: "/week2.jpg",
   },
   {
     id: "week3",
@@ -52,6 +55,7 @@ I believe this life cycle accurately describes all the steps and doesn't miss an
 4) Koltay emphasizes that data quality is tied to its fitness for use and its contextual clarity. Even the smallest studies must maintain quality for their conclusions to be reliable. As I mentioned earlier, errors can occur at every stage of data processing, and this applies to small datasets as well, as they often undergo the same processing steps.
 5) Koltay explains that data quality can have many attributes; for example, researchers have identified dozens and even hundreds of possible quality attributes. Data in research must be of high quality. This is an ethical issue, because if the data is inaccurate, incomplete, or unclear, decisions based on it can harm people. For example, incorrect medical conclusions or unfair decisions can result. In Big Data, truthfulness is especially important. Koltay writes that in Big Data, this is related to data consistency and reliability, and without understanding the context of what the data means, the quality of decisions can be low. 
 6) Which stage of the data lifecycle do you think most often compromises data quality? We know that errors can occur at any stage, but at which stage of data interaction do you think there's the greatest risk of erroneous data?`,
+    image: "/week3.png",
   },
   {
     id: "week4",
@@ -67,6 +71,7 @@ I believe this life cycle accurately describes all the steps and doesn't miss an
 An abductive approach is a search for the best explanation. In other words, during the analysis, we try to understand which explanation is the most logical.
 6) Quantitative and qualitative research differ in that they work with different data. Quantitative data is associated with numbers and measurements, while qualitative data is associated with meaning, experience, context, and interpretation. Data protection is especially important in qualitative research, as interview responses may contain details that can easily identify individuals.
 7) Which standard of analysis is more important in your opinion: transparency of methods or honest interpretation? Can a result be considered fair if the principle of transparency reveals that another principle was violated?`,
+    image: "/week4.jpg",
   },
   {
     id: "week5",
@@ -79,6 +84,7 @@ An abductive approach is a search for the best explanation. In other words, duri
 3) In Table 3, Warsy & Warsy note giving credit and avoiding copy-paste plagiarism as one of the ethical practices involved in writing scientific research. I consider this the most important ethical practice because using someone else's ideas without acknowledging the source is unfair to the original author and misleads readers. The table clearly states not to use others' ideas, work, or data without credit, and not to copy-paste from published sources unless properly quoted and referenced. Work done by copying someone else's ideas has no scientific value and is a waste of time. However, when refining or analyzing someone else's ideas, it is important to cite the source, as science is a shared system where readers need to know where the ideas came from.
 4) One type of plagiarism that Warsy & Warsy describe is mosaic plagiarism. This refers to the process by which an author uses another author's ideas in their work, replacing words with synonyms and changing a few phrases. This practice is acceptable if the original author is credited. However, when such an idea is presented as one's own without attributing the author, it constitutes plagiarism. An example would be a student who, while reading a scientific article, rewrites its ideas in their work, replacing words with synonyms, for example, pressure becomes stress, or unethical becomes wrong. If the student fails to cite the article, it is mosaic plagiarism, even though the text appears different.
 5) What do you think is more ethically important: preventing plagiarism or protecting people's rights in research surveys?`,
+    image: "/week5.jpg",
   },
   {
     id: "week6",
@@ -93,6 +99,7 @@ An abductive approach is a search for the best explanation. In other words, duri
 5) One modern method of data destruction is cryptographic erasure. This method removes the encryption keys responsible for data protection. Without the key, the encrypted data becomes unreadable and unrecoverable. I chose this method because I've worked with encryption keys in a couple of my projects and have a general understanding of how it works.
 6) The "right to be forgotten," established under Article 17 of the GDPR, gives individuals the right to request erasure of personal data under certain conditions. This concept is truly important when discussing preservation because it helps protect people's rights, rather than simply preserving all existing data for future storage.
 7) How important is it to apply long-term preservation techniques to all data? Or should we focus only on the most important data? If so, what criteria should determine whether a dataset deserves long-term preservation?`,
+    image: "/week6.jpg",
   },
 ];
 
@@ -113,6 +120,7 @@ export default function Weeks() {
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-cyan-400/5 pointer-events-none" />
 
+                  {/* основной контент */}
                   <div className="relative z-10 p-5 sm:p-7 lg:p-10">
                     <div className="flex flex-col xl:flex-row xl:items-start xl:justify-between gap-8">
                       <div className="w-full max-w-3xl">
@@ -143,6 +151,18 @@ export default function Weeks() {
                       </div>
                     </div>
                   </div>
+
+                  {week.image && (
+                    <div className="relative">
+                      <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/15 via-cyan-400/15 to-blue-300/15 blur-2xl pointer-events-none" />
+                      <img
+                        src={week.image}
+                        alt={`Week ${week.weekNumber} visual`}
+                        className="relative w-full h-56 sm:h-72 lg:h-96 object-cover border-t border-white/10"
+                        loading="lazy"
+                      />
+                    </div>
+                  )}
                 </article>
               ))}
             </div>
